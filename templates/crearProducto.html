@@ -1,0 +1,23 @@
+{% extends "admin.html" %}
+
+ {% block content %}
+<div class="container" style="margin-top: 10px; margin-bottom: 5%;">
+    <form action="/store" method="post" enctype="multipart/form-data">
+        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre del producto"> <br>
+        <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" placeholder="descripcion del producto"></textarea> <br>
+        <input class="form-control" type="text" name="precio" id="precio" placeholder="Precio"> <br>
+        <input class="form-control" type="text" name="disponible" id="disponible" placeholder="cantidad"><br>
+        <select style="margin-bottom: 10px;" name="categoria" class="form-select" aria-label="Default select example"> 
+            <option selected>Categoria de productos</option>
+            <option value="HERRAMIENTA">HERRAMIENTA</option>
+            <option value="CABLE">CABLE</option>
+            <option value="TORNILLOS">TORNILLOS</option>
+            <option value="LUCES">LUCES</option>
+            <option value="TOMACORRIENTE">TOMACORRIENTE</option>
+          </select>
+        <input type="file" name="foto" id="foto"> <br><br>
+        <input style="margin-left: 40%;" class="btn btn-info" type="submit" value="Agregar">
+    </form>
+</div>
+ 
+ {% endblock %}

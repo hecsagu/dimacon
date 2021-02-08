@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+ {% block content %}
+<div class="container" style="margin-top: 10px;">
+    <form action="/generarPedido" method="post" enctype="multipart/form-data">
+        <input class="form-control" type="hidden" name="total" id="total" value="{{total}}"> <br>
+        <input class="form-control" type="text" name="cedula" id="cedula" required="[0-9]" placeholder="Cedula"> <br>
+        <input class="form-control" type="text" name="nombre" id="nombre" required="[a-zA-Z]+" placeholder="Nombres y apellidos"> <br>
+        <input class="form-control" type="email" name="correo" id="correo" required="[0-9]" placeholder="Ingrese su correo electronico"> <br>
+        <input class="form-control" type="text" name="celular" id="celular" required="[0-9]" placeholder="Celular"><br>
+        <input type="submit" value="Comprar">
+    </form>
+</div>
+ 
+ {% endblock %}

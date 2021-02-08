@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div style="margin-left: 5%;" class="row">
+{% for product in productos %}
+
+    <div class="col-md-5">
+        <div class="card mb-3" style="max-width: 500px;">
+            <div class="row g-0">
+                
+              <div class="col-md-4">
+                <img src="{{url_for('media', nombrefoto=product.0.6) }}" alt="..." width="100%">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.0.2 }}</h5>
+                  <p class="card-text">{{ product.0.3 }}</p>
+                  <p class="card-text"><small class="text-muted">Disponible: {{ product.0.5 }} {{product.1.2}}</small></p>
+                  <p class="card-text">Precio: ${{ product.0.4 }}</p>
+                  <form action="/carrito_add" method="post">
+                    <input type="hidden" name="codigo" id="nombre" value="{{ product.0.0 }}"> 
+                    <input type="hidden" name="categoria" id="categoria" value="{{ product.0.1 }}">
+                    <input type="hidden" name="nombre" id="nombre" value="{{ product.0.2 }}"> 
+                    <input type="hidden" name="disponible" id="disponible" value="{{ product.0.5 }}"> 
+                    <input type="hidden" name="precio" id="precio" value="{{ product.0.4 }}">
+                     <input type="text" name="cantidad" id="cantidad" value="1">
+                    <input type="submit" value="agregar">
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    {% endfor %}
+  </div>
+    
+
+{% endblock%}

@@ -1,0 +1,62 @@
+{% extends "layout.html"%}
+
+
+{% block cabecera%}
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/carrito.css') }}">
+{% endblock %}
+
+
+{% block content%}
+{%if total>0 %}
+<table class="table" style="margin-bottom: 20%;">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio Unitario</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for art in articulos %}
+    
+      <tr>
+        <th scope="row">{{ art['id'] }}</th>
+        <td>{{ art['nombre'] }}</td>
+        <td>{{ art['cantidad']}}</td>
+        <td>$ {{ art['precio']}}</td>
+        <td>$  {{ art['sub']}}</td>
+        <td><a type="button" class="btn btn-outline-danger" href="{{url_for('cookie_delete',id= art['id'])}}">Borrar</a></td>
+      
+      </tr>
+      {% endfor %}
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td><h5>IVA:</h5></td>
+        <td>$ {{iva}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th scope="row"></th>
+        <td></td>
+        <td></td>
+        <td><h4>Total:</h4></td>
+        <td>$ {{total}}</td>
+        <td><a type="button" class="btn btn-outline-info" href="{{url_for('cliente',Total=total)}}">Comprar</a></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  {% else: %}
+  <h1 id="cartel"> CARRITO VACIO</h1>
+  <div id="carrito">
+
+  </div>
+  
+  {% endif %}
+{% endblock %}

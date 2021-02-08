@@ -1,0 +1,11 @@
+footer{
+    color: antiquewhite;
+    bottom: 0px;
+    width: 100%;
+    position:relative;       
+   
+}
+footer a{
+    color: antiquewhite;
+    text-decoration: none;
+}

@@ -1,0 +1,26 @@
+{% extends "admin.html" %}
+
+ {% block content %}
+
+ <div class="container" style="margin-top: 10px;">
+    <form action="/new_datos" method="post" enctype="multipart/form-data">
+        <input class="form-control" type="hidden" name="id" id="id" value="{{ datos.0 }}"> <br>
+        <input class="form-control" type="text" name="nombre" id="nombre" value="{{ datos.2 }}"> <br>
+        <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" >{{ datos.3 }}</textarea> <br>
+        <input class="form-control" type="text" name="precio" id="precio" value="{{ datos.4 }}"> <br>
+        <input class="form-control" type="text" name="disponible" id="disponible" value="{{ datos.5 }}"><br>
+        <input class="form-control" type="hidden" name="imagen" id="disponible" value="{{ datos.6 }}"><br>
+        <select style="margin-bottom: 10px;" name="categoria" class="form-select" aria-label="Default select example"> 
+            <option value="{{ doto }}" selected>{{ doto }}</option>
+            <option value="HERRAMIENTA">HERRAMIENTA</option>
+            <option value="CABLE">CABLE</option>
+            <option value="TORNILLOS">TORNILLOS</option>
+            <option value="LUCES">LUCES</option>
+            <option value="TOMACORRIENTE">TOMACORRIENTE</option>
+          </select>
+        <input type="file" name="foto" id="foto"> <br><br>
+        <input type="submit" value="Modificar">
+    </form>
+</div>
+ 
+ {% endblock %}

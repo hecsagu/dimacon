@@ -1,0 +1,53 @@
+#parallax-image{
+    background-image: url('primera.jpg');
+    height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+}
+#parallax-image2{
+    background-image: url('segunda.jpg');
+    height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:center;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color:#50cce8;
+}
+#imagen1{
+    background-image: url('tarjeta1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: auto;
+}
+#imagen2{
+    background-image: url('tarjeta2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: auto;
+}
+#imagen3{
+    background-image: url('tarjeta3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: auto;
+}
+#enlaces{
+    text-decoration: none;
+    color:black;
+}

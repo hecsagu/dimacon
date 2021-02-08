@@ -1,0 +1,32 @@
+{% extends "admin.html" %}
+
+{% block content %}
+
+<div style="margin-left: 5%;" class="row">
+{% for product in productos %}
+
+    <div class="col-md-5">
+        <div class="card mb-3" style="max-width: 500px;">
+            <div class="row g-0">
+                
+              <div class="col-md-4">
+                <img src="{{url_for('media', nombrefoto=product.6) }}" alt="..." width="100%">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.2 }}</h5>
+                  <p class="card-text">{{ product.3 }}</p>
+                  <p class="card-text"><small class="text-muted">Disponible: {{ product.5 }}</small></p>
+                  <a type="button" onclick="return confirm('Desea borrar el registro')" class="btn btn-outline-danger" href="{{url_for('destroy',id= product.0)}}">Borrar</a>
+                  <a type="button"  class="btn btn-outline-info" href="{{url_for('new_datos',id= product.0)}}">Actualizar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    {% endfor %}
+  </div>
+    
+
+{% endblock%}

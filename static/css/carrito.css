@@ -1,0 +1,11 @@
+#carrito{
+ 
+    background-image: url('carritovacio.png');
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 500px;
+    width: auto;
+}
+#cartel{
+    padding-left: 35%;
+}

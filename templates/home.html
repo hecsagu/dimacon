@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block cabecera%}
+<link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content%}
+
+
+
+
+
+
+<div id="parallax-image" >
+  
+    <div class="row h-100">
+        <div class="col-md-12 align-self-center">
+            <h1 class="text-center">!Bienvenidos a DISMACON!</h1>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    El mejor lugar para que puedas adquirir todos sus herramientas o materiales de calidad, con las cuales 
+    puedas llevar a cabo todos sus trabajos y proyectos 
+</div>
+<div id="parallax-image2" >
+  
+    <div class="row h-100">
+        <div class="col-md-12 align-self-center">
+            <h1 class="text-center">!Las Mejores Herramientas!</h1>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <div id="imagen1"></div>
+            <div class="card-body">
+                <h4 class="text-center"><a id="enlaces" href="{{ url_for('productos', categoria=1) }}">Herramientas</a></h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+          <div id="imagen2"></div>
+            <div class="card-body">
+              <h4 class="text-center">Materiales de construccion</h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm">
+        <div class="card" style="width: 18rem;">
+            <div id="imagen3"></div>
+            <div class="card-body">
+              <h4 class="text-center"><a id="enlaces" href="{{ url_for('productos', categoria=6) }}">Pinturas</a></h4>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

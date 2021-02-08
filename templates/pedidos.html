@@ -1,0 +1,39 @@
+{% extends "admin.html"%}
+
+
+
+
+
+{% block content%}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Cliente</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Total</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for fila in filas %}
+      
+      <tr>
+        <th scope="row">{{ fila.0.0}}</th>
+        <td>{{ fila.1}}</td> 
+        <td>{{ fila.0.2}}</td>
+        <td> {{ fila.0.3 }}</td>
+        <td>$ {{ fila.0.4 }}</td>
+        
+      
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  </table>
+ 
+  
+
+{% endblock %}
